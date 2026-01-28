@@ -26,7 +26,11 @@ Below we present a direct visual comparison at the **extremely-low bitrate**.
 **Bitrate:** XX kbps (same for all methods)
 
 ### Ours
-<video src="videos/teaser/ours.mp4" controls width="520"></video>
+<video src="videos/0p001-0p003/1DCVC-videoSRC10_1280x720_30-0p002.gif" controls width="520"></video>
+
+<p align="center">
+  <img src="videos/0p001-0p003/1DCVC-videoSRC10_1280x720_30-0p002.gif" width="400">
+</p>
 
 ### HEVC (x265)
 <video src="videos/teaser/hevc.mp4" controls width="520"></video>
