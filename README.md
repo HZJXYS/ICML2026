@@ -18,29 +18,167 @@ Our method prioritizes **structure-preserving representation** by encode only **
 
 ---
 
-## 2. Qualitative Results of our work
+## 2. Visual Quality of Our Work at Ultra-Low Bitrates
 
 Below we present a direct visual comparison at the **extremely-low bitrate**.
 
-**Sequence:** CIF (352×288), 30 fps  
-**Bitrate:** XX kbps (same for all methods)
-
-### Ours
-<video src="videos/0p001-0p003/1DCVC-videoSRC10_1280x720_30-0p002.gif" controls width="520"></video>
+**Sequence:** GIF (1280 x 720), 5 fps, 15 frames  
+**Bitrate range:** 0.001 ~ 0.008 (same for all methods)
 
 <p align="center">
-  <img src="videos/0p001-0p003/1DCVC-videoSRC10_1280x720_30-0p002.gif" width="400">
+  <img src="video/0p001-0p003/1OURS-videoSRC10_1280x720_30-0p0015.gif" width="400">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="video/0p001-0p003/2OURS-videoSRC01_1280x720_30-0p0015.gif" width="400"><br>
+  <em>Sequence A: &nbsp; bpp @ 0.0015 </em>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <em>Sequence B: &nbsp; bpp @ 0.0015 </em>
 </p>
 
-### HEVC (x265)
-<video src="videos/teaser/hevc.mp4" controls width="520"></video>
+<p align="center">
+  <img src="video/0p003-0p008/2OURs-videoSRC13_1280x720_30-0p0031.gif" width="400">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="video/0p003-0p008/3OURS-videoSRC12_1280x720_30-0p0062.gif" width="400"><br>
+ <em>Sequence C: &nbsp; bpp @ 0.0031 </em>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <em>Sequence D: &nbsp; bpp @ 0.0062 </em>
+</p>
 
-### VAE-based Learned Codec
-<video src="videos/teaser/vae.mp4" controls width="520"></video>
+## 3. Comparison with State-of-the-Art (GIF Demo)
+The following GIFs provide a qualitative comparison between our method and representative state-of-the-art video compression approaches at ultra-low bitrates.
+All methods are evaluated under comparable rate constraints, and the examples highlight differences in structural fidelity and temporal consistency.
 
----
+<table align="center">
+  <tr>
+    <th>Bitrate range</th>
+    <th><b>Ground truth</b></th>
+    <th><b>Ours</b></th>
+    <th>Method A<br>(GLCvideo @ CVPR'23)</th>
+    <th>Method A<br>(DCVC)</th>
+    <th>Method B<br>(ECM)</th>
+    <th>Method B<br>(VTM)</th>
+  </tr>
+
+  <!-- ===== Bitrate: 0.001 ~ 0.003 ===== -->
+  <tr>
+    <td rowspan="2" align="center"><b>0.001 ~ 0.003</b></td>
+    <td align="center">
+      <img src="video/0p001-0p003/1GT-videoSRC10_1280x720_30.gif" width="300"> 
+    </td>
+    <td align="center">
+      <img src="video/0p001-0p003/1OURS-videoSRC10_1280x720_30-0p0015.gif" width="300"> <br> bpp @ 0.0015
+    </td>
+    <td align="center">
+      <img src="video/0p001-0p003/1GLC-videoSRC10_1280x704_30-0p0078.gif" width="300"><br> bpp @ 0.0078
+    </td>
+    <td align="center">
+      <img src="video/0p001-0p003/1DCVC-videoSRC10_1280x720_30-0p002.gif" width="300"><br> bpp @ 0.002
+    </td>
+     <td align="center">
+      <img src="video/0p001-0p003/1ECM-videoSRC10_1280x720_30_qp50_rec-0p0016.gif" width="300"><br> bpp @ 0.0016
+    </td>
+    <td align="center">
+      <img src="video/0p001-0p003/1VTM-videoSRC10_1280x720_30_qp50_rec-0p0016.gif" width="300"><br> bpp @ 0.0016
+    </td>
+  </tr>
+
+  <tr> 
+    <td align="center">
+      <img src="video/0p001-0p003/2GTvideoSRC01_1280x720_30.gif" width="300">
+    </td>
+    <td align="center">
+      <img src="video/0p001-0p003/2OURS-videoSRC01_1280x720_30-0p0015.gif" width="300"><br> bpp @ 0.0015
+    </td>
+    <td align="center">
+      <img src="video/0p001-0p003/2GLC-videoSRC01_1280x704_30-0p0078.gif" width="300"><br> bpp @ 0.0078
+    </td>
+    <td align="center">
+      <img src="video/0p001-0p003/2DCVC-videoSRC01_1280x720_30-0p002.gif" width="300"><br> bpp @ 0.002
+    </td>
+     <td align="center">
+      <img src="video/0p001-0p003/2ECM-videoSRC01_1280x720_30_qp50_rec-0p0016.gif" width="300"><br> bpp @ 0.0016
+    </td>
+    <td align="center">
+      <img src="video/0p001-0p003/2VTM-videoSRC01_1280x720_30_qp50_rec-0p0016.gif" width="300"><br> bpp @ 0.0016
+    </td>
+  </tr>
+
+  
+  <!-- ===== Bitrate: 0.003 ~ 0.008 ===== -->
+   <tr>
+    <td rowspan="3" align="center"><b>0.003 ~ 0.008</b></td>
+    <td align="center">
+      <img src="video/0p003-0p008/1GTvideoSRC09_1280x720_25.gif" width="300"> 
+    </td>
+    <td align="center">
+      <img src="video/0p003-0p008/1OURS-videoSRC09_1280x720_25-0p0031.gif" width="300"> <br> bpp @ 0.0031
+    </td>
+    <td align="center">
+      <img src="video/0p003-0p008/1GLC-videoSRC09_1280x704_25-0.0078.gif" width="300"><br> bpp @ 0.0078
+    </td>
+    <td align="center">
+      <img src="video/0p003-0p008/1DCVC-videoSRC09_1280x720_25-0p0047.gif" width="300"><br> bpp @ 0.0047
+    </td>
+     <td align="center">
+      <img src="video/0p003-0p008/1ECM-videoSRC09_1280x720_25_qp45_rec-0p0033.gif" width="300"><br> bpp @ 0.0033
+    </td>
+    <td align="center">
+      <img src="video/0p003-0p008/1VTM-videoSRC09_1280x720_25_qp45_rec-0p0033.gif" width="300"><br> bpp @ 0.0033
+    </td>
+  </tr>
+
+  <td align="center">
+      <img src="video/0p003-0p008/2GT-videoSRC13_1280x720_30.gif" width="300"> 
+    </td>
+    <td align="center">
+      <img src="video/0p003-0p008/2OURs-videoSRC13_1280x720_30-0p0031.gif" width="300"> <br> bpp @ 0.0031
+    </td>
+    <td align="center">
+      <img src="video/0p003-0p008/2GLC-videoSRC13_1280x704_30-0p0078.gif" width="300"><br> bpp @ 0.0078
+    </td>
+    <td align="center">
+      <img src="video/0p003-0p008/2DCVC-videoSRC13_1280x720_30-0p0047.gif" width="300"><br> bpp @ 0.0047
+    </td>
+     <td align="center">
+      <img src="video/0p003-0p008/2ECM-videoSRC13_1280x720_30_qp45_rec-0p0033.gif" width="300"><br> bpp @ 0.0033
+    </td>
+    <td align="center">
+      <img src="video/0p003-0p008/2VTM-videoSRC13_1280x720_30_qp45_rec-0p0033.gif" width="300"><br> bpp @ 0.0033
+    </td>
+  </tr>
+
+  <td align="center">
+      <img src="video/0p003-0p008/3GT-videoSRC12_1280x720_30.gif" width="300"> 
+    </td>
+    <td align="center">
+      <img src="video/0p003-0p008/3OURS-videoSRC12_1280x720_30-0p0062.gif" width="300"> <br> bpp @ 0.0062
+    </td>
+    <td align="center">
+      <img src="video/0p003-0p008/3GLC-videoSRC12_1280x704_30-0p0078.gif" width="300"><br> bpp @ 0.0078
+    </td>
+    <td align="center">
+      <img src="video/0p003-0p008/3DCVC-videoSRC12_1280x720_30-0p010.gif" width="300"><br> bpp @ 0.010
+    </td>
+     <td align="center">
+      <img src="video/0p003-0p008/3ECM-videoSRC12_1280x720_30_qp45_rec0p0033.gif" width="300"><br> bpp @ 0.0033
+    </td>
+    <td align="center">
+      <img src="video/0p003-0p008/3VTM-videoSRC12_1280x720_30_qp45_rec-0p0033.gif" width="300"><br> bpp @ 0.0033
+    </td>
+  </tr>
+</table>
+
+
+
 
 ## 3. Visual Comparison Using Animated Frames
+
+
+
+
+
+
 
 To facilitate **quick inspection**, we provide animated visual comparisons.  
 All methods are evaluated under **identical bitrate constraints**.
