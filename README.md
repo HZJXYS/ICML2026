@@ -45,10 +45,14 @@ Below we present a direct visual comparison at the **extremely-low bitrate**.
  <em>Sequence D: &nbsp; bpp @ 0.0062 </em>
 </p>
 
+---
+
 ## 3. Comparison with State-of-the-Art (GIF Demo)
 The following GIFs provide a qualitative comparison between our method and representative state-of-the-art video compression approaches at ultra-low bitrates.
 All methods are evaluated under comparable rate constraints, and the examples highlight differences in structural fidelity and temporal consistency.
 
+> **For better visual inspection, we kindly suggest viewing this page at a larger zoom level to more clearly observe the quality differences among compression models.**
+> 
 <table align="center">
   <tr>
     <th>Bitrate range</th>
@@ -169,97 +173,35 @@ All methods are evaluated under comparable rate constraints, and the examples hi
   </tr>
 </table>
 
+--- 
+## 4. Key Observations and Qualitative Analysis
 
+Based on the visual comparisons above, we highlight several consistent qualitative observations at extremely low bitrates:
 
+- **Structural fidelity.**  
+  Our method better preserves global scene layout and object structure, while competing methods often suffer from severe block artifacts or structural collapse when bitrate drops below bpp@0.003.
 
-## 3. Visual Comparison Using Animated Frames
+- **Temporal consistency.**  
+  Despite allocating zero bitrate to motion-related latents, our generative reconstruction maintains smoother and more coherent temporal dynamics, whereas other approaches exhibit noticeable flickering, jittering, or frozen regions.
 
+- **Perceptual realism.**  
+  Compared to conventional codecs (e.g., VTM, ECM) and learned baselines (e.g., DCVC, GLCVideo), our results demonstrate more natural motion patterns and fewer visually distracting artifacts under comparable rate budgets.
 
-
-
-
-
-
-To facilitate **quick inspection**, we provide animated visual comparisons.  
-All methods are evaluated under **identical bitrate constraints**.
 
 ---
 
-### 3.1 2 × 3 Comparison (Recommended for Fast Review)
+## 7. Reproducibility and Code Availability
 
-**Sequence 1 | CIF | XX kbps**
+Due to the double-blind review policy, **training code and model weights are not released at this stage**.  
+Upon acceptance, we plan to release:
 
-| Ours | HEVC | BPG |
-|:----:|:----:|:---:|
-| ![](videos/gifs/seq1_ours.gif) | ![](videos/gifs/seq1_hevc.gif) | ![](videos/gifs/seq1_bpg.gif) |
-
-**Observation:**  
-Our method better preserves **structural edges and object integrity**, while avoiding severe blocking or texture collapse.
+- Full training and inference code  
+- Pre-trained models  
+- Scripts for reproducing all visual results shown on this page  
 
 ---
 
-### 3.2 3 × N Comparison (Multi-Sequence Evaluation)
+## 8. Contact
 
-The following table shows results across multiple test sequences.
-
-| Sequence | Ours | HEVC | VAE-based |
-|:--------:|:----:|:----:|:--------:|
-| Seq-01 | ![](videos/gifs/seq1_ours.gif) | ![](videos/gifs/seq1_hevc.gif) | ![](videos/gifs/seq1_vae.gif) |
-| Seq-02 | ![](videos/gifs/seq2_ours.gif) | ![](videos/gifs/seq2_hevc.gif) | ![](videos/gifs/seq2_vae.gif) |
-| Seq-03 | ![](videos/gifs/seq3_ours.gif) | ![](videos/gifs/seq3_hevc.gif) | ![](videos/gifs/seq3_vae.gif) |
-
----
-
-### Visual Comparison (Image Denoising / Super-Resolution / etc.)
-
-The following table compares the visual quality of different methods. **Ours** restores more high-frequency details compared to Method A and Method B.
-
-| Input / Low Res | Method A [CVPR'23] | Method B [ICCV'23] | **Ours** | Ground Truth |
-| :---: | :---: | :---: | :---: | :---: |
-| < img src="assets/results/set1_input.png" width="100%"> | < img src="assets/results/set1_methodA.png" width="100%"> | < img src="assets/results/set1_methodB.png" width="100%"> | < img src="assets/results/set1_ours.png" width="100%"> | < img src="assets/results/set1_gt.png" width="100%"> |
-| < img src="assets/results/set2_input.png" width="100%"> | < img src="assets/results/set2_methodA.png" width="100%"> | < img src="assets/results/set2_methodB.png" width="100%"> | < img src="assets/results/set2_ours.png" width="100%"> | < img src="assets/results/set2_gt.png" width="100%"> |
-
-> **Figure 1:** Visual comparison on sample ID 001 and 002. Please zoom in for better view.
-
----
-
-### Comparison with State-of-the-Art (GIF Demo)
-
-Since static images may not fully reveal temporal consistency, we provide a GIF comparison below showing the transition between the baseline and our method.
-
-| Baseline vs. Ours (Looping) |
-| :---: |
-| < img src="assets/gifs/comparison_demo.gif" width="600"> |
-| *Left: Baseline method results. Right: Our results.* |
-
----
-
-## 4. Full Video Comparisons (MP4)
-
-For more careful inspection, we also provide full-length video clips.
-
-### Sequence 1
-- **Ours**  
-<video src="videos/comparisons/seq1/ours.mp4" controls width="420"></video>
-
-- **HEVC**  
-<video src="videos/comparisons/seq1/hevc.mp4" controls width="420"></video>
-
-- **VAE-based Codec**  
-<video src="videos/comparisons/seq1/vae.mp4" controls width="420"></video>
-
----
-
-## 5. Notes on Evaluation Protocol
-
-- All methods are evaluated at the **same target bitrate**
-- CIF resolution (352×288), YUV 4:2:0, 8-bit
-- GOP structure and frame rate are aligned whenever applicable
-- No post-processing is applied
-
----
-
-## 6. Raw CIF Files
-
-For completeness and reproducibility, we also provide raw CIF files:
+For questions regarding the visual results or evaluation protocol, please contact the authors after the review process.
 
