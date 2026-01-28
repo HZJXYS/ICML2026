@@ -190,7 +190,7 @@ Based on the visual comparisons above, we highlight several consistent qualitati
 
 ---
 
-## 7. Reproducibility and Code Availability
+## 5. Reproducibility and Code Availability
 
 Due to the double-blind review policy, **training code and model weights are not released at this stage**.  
 Upon acceptance, we plan to release:
@@ -201,7 +201,7 @@ Upon acceptance, we plan to release:
 
 ---
 
-## 8. Contact
+## 6. Contact
 
 For questions regarding the visual results or evaluation protocol, please contact the authors after the review process.
 
