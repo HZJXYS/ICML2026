@@ -2,7 +2,7 @@
 
 This repository provides **visual comparison results** for our ICML submission:
 
-> **Title:***Group-of-Latents: Perceptual Video Compression at Extremely-Low Bitrates via Masked Latent Generative Modeling*  
+> **Title:** *Group-of-Latents: Perceptual Video Compression at Extremely-Low Bitrates via Masked Latent Generative Modeling*  
 > **Authors:** *Anonymous submission for ICML review*
 
 The goal of this page is to offer **intuitive visual evidence** of the compression behavior of different methods under **extremely constrained bitrate budgets**, where traditional metrics alone may be insufficient.
